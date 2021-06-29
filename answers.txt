@@ -1,70 +1,76 @@
-Using COUNT, get the number of cities in the USA.
+1.Using COUNT, get the number of cities in the USA.
 	SELECT COUNT(Name) FROM city WHERE CountryCode = 'USA';
 	
 	
-Find out the population and life expectancy for people in Argentina.
+2.Find out the population and life expectancy for people in Argentina.
 	SELECT population, lifeexpectancy FROM country WHERE name = 'Argentina';
 	
 	
-Using IS NOT NULL, ORDER BY, and LIMIT, which country has the highest life expectancy?
+3.Using IS NOT NULL, ORDER BY, and LIMIT, which country has the highest life expectancy?
 SELECT lifeexpectancy, name FROM country WHERE lifeexpectancy IS NOT NULL ORDER BY lifeexpectancy DESC limit 5
 
 
-Using JOIN ... ON, find the capital city of Spain.
+4.Using JOIN ... ON, find the capital city of Spain.
 	SELECT city.Name FROM city 
 	JOIN country ON city.ID = country.Capital 
 	WHERE country.Name = 'Spain';
 	
 
-Using JOIN ... ON, list all the languages spoken in the Southeast Asia region.
+5.Using JOIN ... ON, list all the languages spoken in the Southeast Asia region.
 	SELECT countrylanguage.Language FROM countrylanguage 
 	JOIN country ON countrylanguage.CountryCode = country.Code
 	WHERE country.region = 'Southeast Asia';
 	
 
-Using a single query, list 25 cities around the world that start with the letter F.
+6.Using a single query, list 25 cities around the world that start with the letter F.
+SELECT * FROM city WHERE name like 'f%' limit 25
 
 
-Using COUNT and JOIN ... ON, get the number of cities in China.
+7.Using COUNT and JOIN ... ON, get the number of cities in China.
+SELECT COUNT(city.name) FROM city 
+JOIN country ON city.CountryCode = country.Code
+WHERE country.Code = 'CHN'
 
 
-Using IS NOT NULL, ORDER BY, and LIMIT, which country has the lowest population? Discard non-zero populations.
+8.Using IS NOT NULL, ORDER BY, and LIMIT, which country has the lowest population? Discard non-zero populations.
+SELECT * FROM country WHERE population IS NOT NULL ORDER BY Population ASC
 
 
-Using aggregate functions, return the number of countries the database contains.
+9.Using aggregate functions, return the number of countries the database contains.
+SELECT COUNT(name) FROM country;
 
 
-What are the top ten largest countries by area?
+10.What are the top ten largest countries by area?
+SELECT * FROM country ORDER BY SurfaceArea DESC limit 10
 
 
-List the five largest cities by population in Japan.
+11.List the five largest cities by population in Japan.
 
 
-List the names and country codes of every country with Elizabeth II as its Head of State. You will need to fix the mistake first!
+12.List the names and country codes of every country with Elizabeth II as its Head of State. You will need to fix the mistake first!
 
 
-List the top ten countries with the smallest population-to-area ratio. Discard any countries with a ratio of 0.
+13.List the top ten countries with the smallest population-to-area ratio. Discard any countries with a ratio of 0.
 
 
-List every unique world language.
+14.List every unique world language.
 
 
-List the names and GNP of the world's top 10 richest countries.
+15.List the names and GNP of the world's top 10 richest countries.
 
 
-List the names of, and number of languages spoken by, the top ten most multilingual countries.
+16.List the names of, and number of languages spoken by, the top ten most multilingual countries.
 
 
-List every country where over 50% of its population can speak German.
+17.List every country where over 50% of its population can speak German.
 
 
-Which country has the worst life expectancy? Discard zero or null values.
+18.Which country has the worst life expectancy? Discard zero or null values.
 
 
-List the top three most common government forms.
+19.List the top three most common government forms.
 
 
-How many countries have gained independence since records began?
-
+20.How many countries have gained independence since records began?
 
 
