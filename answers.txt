@@ -1,37 +1,70 @@
-1. Using COUNT, get the number of cities in the USA.
-	1. SELECT COUNT(Name) FROM city WHERE CountryCode = 'USA';
+Using COUNT, get the number of cities in the USA.
+	SELECT COUNT(Name) FROM city WHERE CountryCode = 'USA';
+	
+	
+Find out the population and life expectancy for people in Argentina.
+	SELECT population, lifeexpectancy FROM country WHERE name = 'Argentina';
+	
+	
+Using IS NOT NULL, ORDER BY, and LIMIT, which country has the highest life expectancy?
+SELECT lifeexpectancy, name FROM country WHERE lifeexpectancy IS NOT NULL ORDER BY lifeexpectancy DESC limit 5
 
-2. Find out the population and life expectancy for people in Argentina.
-	1. SELECT population, lifeexpectancy FROM country WHERE name = 'Argentina';
 
-3. Using IS NOT NULL, ORDER BY, and LIMIT, which country has the highest life expectancy?
-	I did it but have forgotten to copy the answer. will do it again when i finish the rest
+Using JOIN ... ON, find the capital city of Spain.
+	SELECT city.Name FROM city 
+	JOIN country ON city.ID = country.Capital 
+	WHERE country.Name = 'Spain';
+	
 
-4. SELECT lifeexpectancy, name FROM country WHERE lifeexpectancy IS NOT NULL ORDER BY lifeexpectancy DESC limit 5
-	I did it but have forgotten to copy the answer. will do it again when i finish the rest
+Using JOIN ... ON, list all the languages spoken in the Southeast Asia region.
+	SELECT countrylanguage.Language FROM countrylanguage 
+	JOIN country ON countrylanguage.CountryCode = country.Code
+	WHERE country.region = 'Southeast Asia';
+	
 
-5. Using JOIN ... ON, find the capital city of Spain.
-	1. SELECT city.Name FROM city 
-	2. JOIN country ON city.ID = country.Capital 
-	3. WHERE country.Name = 'Spain';
+Using a single query, list 25 cities around the world that start with the letter F.
 
-6. Using JOIN ... ON, list all the languages spoken in the Southeast Asia region.
-	1. SELECT countrylanguage.Language FROM countrylanguage 
-	2. JOIN country ON countrylanguage.CountryCode = country.Code
-	3. WHERE country.region = 'Southeast Asia';
 
-7. Using a single query, list 25 cities around the world that start with the letter F.
-8. Using COUNT and JOIN ... ON, get the number of cities in China.
-9. Using IS NOT NULL, ORDER BY, and LIMIT, which country has the lowest population? Discard non-zero populations.
-10. Using aggregate functions, return the number of countries the database contains.
-11. What are the top ten largest countries by area?
-12. List the five largest cities by population in Japan.
-13. List the names and country codes of every country with Elizabeth II as its Head of State. You will need to fix the mistake first!
-14. List the top ten countries with the smallest population-to-area ratio. Discard any countries with a ratio of 0.
-15. List every unique world language.
-16. List the names and GNP of the world's top 10 richest countries.
-17. List the names of, and number of languages spoken by, the top ten most multilingual countries.
-18. List every country where over 50% of its population can speak German.
-19. Which country has the worst life expectancy? Discard zero or null values.
-20. List the top three most common government forms.
-21. How many countries have gained independence since records began?
+Using COUNT and JOIN ... ON, get the number of cities in China.
+
+
+Using IS NOT NULL, ORDER BY, and LIMIT, which country has the lowest population? Discard non-zero populations.
+
+
+Using aggregate functions, return the number of countries the database contains.
+
+
+What are the top ten largest countries by area?
+
+
+List the five largest cities by population in Japan.
+
+
+List the names and country codes of every country with Elizabeth II as its Head of State. You will need to fix the mistake first!
+
+
+List the top ten countries with the smallest population-to-area ratio. Discard any countries with a ratio of 0.
+
+
+List every unique world language.
+
+
+List the names and GNP of the world's top 10 richest countries.
+
+
+List the names of, and number of languages spoken by, the top ten most multilingual countries.
+
+
+List every country where over 50% of its population can speak German.
+
+
+Which country has the worst life expectancy? Discard zero or null values.
+
+
+List the top three most common government forms.
+
+
+How many countries have gained independence since records began?
+
+
+
