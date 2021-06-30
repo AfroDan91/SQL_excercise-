@@ -45,19 +45,29 @@ SELECT * FROM country ORDER BY SurfaceArea DESC limit 10
 
 
 11.List the five largest cities by population in Japan.
-
+SELECT * FROM city WHERE CountryCode = 'JPN' ORDER BY population desc limit 5
 
 12.List the names and country codes of every country with Elizabeth II as its Head of State. You will need to fix the mistake first!
+UPDATE country 
+SET HeadOfState = 'Elizabeth II'
+WHERE HeadOfstate = 'Elisabeth II'
+
+SELECT Code, Name FROM country WHERE HeadOfState = 'Elizabeth II'
 
 
 13.List the top ten countries with the smallest population-to-area ratio. Discard any countries with a ratio of 0.
+SELECT Name, Population / SurfaceArea AS PopByArea
+FROM country 
+WHERE Population IS NOT NULL AND Population > 0
+ORDER BY Population ASC
 
 
 14.List every unique world language.
+SELECT DISTINCT language FROM countrylanguage
 
 
 15.List the names and GNP of the world's top 10 richest countries.
-
+SELECT Name, GNP FROM country ORDER BY GNP DESC LIMIT 10
 
 16.List the names of, and number of languages spoken by, the top ten most multilingual countries.
 
@@ -72,5 +82,3 @@ SELECT * FROM country ORDER BY SurfaceArea DESC limit 10
 
 
 20.How many countries have gained independence since records began?
-
-
